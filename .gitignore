@@ -1,0 +1,9 @@
+# Expo
+.expo/
+dist/
+web-build/
+
+# Native
+*.pem
+node_modules/
+expo-modules-core/android/build/
