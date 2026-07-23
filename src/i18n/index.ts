@@ -19,8 +19,8 @@ export interface LanguageMeta {
 
 export const LANGUAGES: LanguageMeta[] = [
   { code: 'es', name: 'Spanish', nativeName: 'Español', flag: '🇪🇸' },
-  { code: 'en', name: 'English', nativeName: 'English', flag: '🇺🇸' },
-  { code: 'pt', name: 'Portuguese', nativeName: 'Português', flag: '🇧🇷' },
+  { code: 'en', name: 'English', nativeName: 'English', flag: '🇬🇧' },
+  { code: 'pt', name: 'Portuguese', nativeName: 'Português', flag: '🇵🇹' },
   { code: 'fr', name: 'French', nativeName: 'Français', flag: '🇫🇷' },
   { code: 'de', name: 'German', nativeName: 'Deutsch', flag: '🇩🇪' },
 ];
