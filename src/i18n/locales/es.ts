@@ -67,6 +67,7 @@ export const es: TranslationKeys = {
     acceptTermsPrefix: 'Acepto los',
     hasAccount: '¿Ya tienes cuenta?',
     login: 'Inicia sesión',
+    emailExists: 'Este correo electrónico ya está registrado.',
   },
   registerPro: {
     title: 'Crea tu cuenta profesional',

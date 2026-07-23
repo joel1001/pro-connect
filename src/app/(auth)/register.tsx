@@ -12,6 +12,7 @@ import { useRegistrationRoleStore } from '@/store/registrationRoleStore';
 import { useAuthStore } from '@/store/authStore';
 import { isPasswordPolicyMet } from '@/utils/passwordPolicy';
 import { spacing } from '@/theme';
+import { authApi } from '@/api/auth.api';
 
 export default function Register() {
   const { t } = useTranslation();
@@ -36,6 +37,41 @@ export default function Register() {
   useEffect(() => {
     termsApi.current().then((doc) => setTermsVersion(doc.version)).catch(() => undefined);
   }, []);
+
+  useEffect(() => {
+    const normalizedEmail = email.trim().toLowerCase();
+  
+    const emailRegex =
+      /^[a-zA-Z0-9](?:[a-zA-Z0-9._%+-]{0,62}[a-zA-Z0-9])?@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)+$/;
+  
+    if (!emailRegex.test(normalizedEmail)) {
+      setError(null);
+      return;
+    }
+  
+    let cancelled = false;
+  
+    const timeout = setTimeout(async () => {
+      try {
+        const exists = await authApi.userExists(normalizedEmail);
+  
+        if (!cancelled) {
+          setError(exists ? t('register.emailExists') : null);
+        }
+      } catch (error) {
+        console.error('Error validating email existence:', error);
+  
+        if (!cancelled) {
+          setError(t('common.unexpectedError'));
+        }
+      }
+    }, 500);
+  
+    return () => {
+      cancelled = true;
+      clearTimeout(timeout);
+    };
+  }, [email, t]);
 
   const passwordsMatch = password === confirmPassword;
   const passwordValid = isPasswordPolicyMet(password);

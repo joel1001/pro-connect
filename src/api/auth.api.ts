@@ -55,6 +55,13 @@ export const authApi = {
     return apiClient.post<AuthResponse>('/auth/refresh', { refreshToken }).then((r) => r.data);
   },
 
+  userExists: (email: string) =>
+    apiClient
+      .get<boolean>('/auth/user/exists', {
+        params: { email },
+      })
+      .then((response) => response.data),
+
   switchRole: async (role: UserRole, deviceId: string, deviceName?: string) => {
     await probeBackendReachable();
     return apiClient.post<AuthResponse>('/auth/switch-role', { role, deviceId, deviceName }).then((r) => r.data);
