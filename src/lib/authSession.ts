@@ -13,6 +13,7 @@ export const PUBLIC_AUTH_ROUTES = [
   '/auth/resend-code',
   '/auth/forgot-password',
   '/auth/reset-password',
+  '/auth/users/exists'
 ] as const;
 
 export function isPublicAuthRoute(url?: string): boolean {

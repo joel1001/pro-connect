@@ -65,6 +65,7 @@ export const en = {
     acceptTermsPrefix: 'I accept the',
     hasAccount: 'Already have an account?',
     login: 'Log in',
+    emailExists: 'This email is already registered.',
   },
   registerPro: {
     title: 'Create your professional account',

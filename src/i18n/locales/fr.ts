@@ -64,6 +64,7 @@ export const fr: TranslationKeys = mergeTranslations(en, {
     error: 'Impossible de créer le compte',
     hasAccount: 'Vous avez déjà un compte ?',
     login: 'Se connecter',
+    emailExists: 'Cette adresse e-mail est déjà enregistrée.',
   },
   registerPro: {
     title: 'Créez votre compte professionnel',
