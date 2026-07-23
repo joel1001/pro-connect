@@ -1,0 +1,92 @@
+{
+  "expo": {
+    "name": "ProConnect",
+    "slug": "proconnect",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "proconnect",
+    "userInterfaceStyle": "automatic",
+
+    "ios": {
+      "icon": "./assets/images/icon.png",
+      "bundleIdentifier": "com.anonymous.proconnect",
+      "infoPlist": {
+        "NSMicrophoneUsageDescription": "ProConnect necesita acceso al micrófono para llamadas dentro del chat.",
+        "NSAppTransportSecurity": {
+          "NSAllowsLocalNetworking": true
+        }
+      }
+    },
+
+    "android": {
+      "icon": "./assets/images/icon.png",
+      "usesCleartextTraffic": true,
+      "predictiveBackGestureEnabled": false,
+      "package": "com.anonymous.proconnect",
+
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyDprj8wTUFTTsEbnKVJsNNHhWBpvI01xps"
+        }
+      },
+
+      "adaptiveIcon": {
+        "backgroundColor": "#16A34A",
+        "foregroundImage": "./assets/images/android-icon-foreground.png",
+        "backgroundImage": "./assets/images/android-icon-background.png",
+        "monochromeImage": "./assets/images/android-icon-monochrome.png"
+      },
+
+      "permissions": [
+        "android.permission.RECORD_AUDIO"
+      ]
+    },
+
+    "web": {
+      "output": "static",
+      "favicon": "./assets/images/favicon.png"
+    },
+
+    "plugins": [
+      "expo-dev-client",
+      "expo-router",
+      [
+        "expo-image-picker",
+        {
+          "cameraPermission": "ProConnect needs camera access to verify your identity and capture your professional documents.",
+          "photosPermission": "ProConnect needs photo library access to upload verification documents."
+        }
+      ],
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#16A34A",
+          "image": "./assets/images/splash-icon.png",
+          "imageWidth": 120,
+          "resizeMode": "contain",
+          "android": {
+            "image": "./assets/images/splash-icon.png",
+            "imageWidth": 120
+          },
+          "ios": {
+            "image": "./assets/images/splash-icon.png",
+            "imageWidth": 120
+          }
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "ProConnect usa tu ubicación para mostrar profesionales cerca de ti en el mapa."
+        }
+      ],
+      "expo-localization",
+      "@react-native-community/datetimepicker"
+    ],
+
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
