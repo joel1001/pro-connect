@@ -45,6 +45,8 @@ export const fr: TranslationKeys = mergeTranslations(en, {
     error: 'Identifiants invalides',
     noAccount: "Vous n'avez pas de compte ?",
     register: "S'inscrire",
+    identifier: 'Adresse e-mail ou nom d’affichage',
+    identifierPlaceholder: 'maria@example.com ou Maria Lopez',
   },
   register: {
     title: 'Créez votre compte',

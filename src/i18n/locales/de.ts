@@ -44,7 +44,8 @@ export const de: TranslationKeys = mergeTranslations(en, {
     forgot: 'Passwort vergessen?',
     error: 'Ungültige Anmeldedaten',
     noAccount: 'Noch kein Konto?',
-    register: 'Registrieren',
+    register: 'Registrieren',    identifier: "E-Mail-Adresse oder Anzeigename",
+    identifierPlaceholder: "maria@example.com oder Maria Lopez",
   },
   register: {
     title: 'Konto erstellen',
