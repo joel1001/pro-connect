@@ -6,4 +6,9 @@ web-build/
 # Native
 *.pem
 node_modules/
-expo-modules-core/android/build/
+
+# Android build artifacts
+**/android/build/
+**/android/.gradle/
+**/android/app/build/
+**/*.so
