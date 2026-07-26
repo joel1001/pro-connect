@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { Pressable, View } from 'react-native';
 
 import { Button, Input, Text } from '@/components/atoms';
-import { AuthLegalFooter, PasswordRulesHint } from '@/components/molecules';
+import { AuthLegalFooter, PasswordRulesHint, PhoneNumberField } from '@/components/molecules';
 import { AuthLayout } from '@/components/templates';
 import { termsApi } from '@/api/terms.api';
 import { getApiErrorMessage } from '@/api/client';
@@ -112,8 +112,23 @@ export default function Register() {
     <AuthLayout title={t('register.title')} subtitle={t('register.subtitle')}>
       <View style={{ gap: spacing.md }}>
         <Input label={t('register.email')} placeholder="maria@example.com" autoCapitalize="none" keyboardType="email-address" iconLeft="mail-outline" value={email} onChangeText={setEmail} />
-        <Input label={t('register.phone')} placeholder="+506 8888 1234" keyboardType="phone-pad" iconLeft="call-outline" value={phone} onChangeText={setPhone} />
-        <Input label={t('register.password')} placeholder={t('register.passwordHint')} secure iconLeft="lock-closed-outline" value={password} onChangeText={setPassword} autoComplete="new-password" />
+        <PhoneNumberField
+          label={t('register.phone')}
+          placeholder={t('profile.phonePlaceholder')}
+          value={phone}
+          onChangeText={setPhone}
+          countryLabel={t('profile.country')}
+          cancelLabel={t('common.cancel')}
+        />
+        <Input
+          label={t("register.password")}
+          placeholder={t("register.passwordHint")}
+          secure
+          iconLeft="lock-closed-outline"
+          value={password}
+          onChangeText={setPassword}
+          autoComplete="new-password"
+        />
         <PasswordRulesHint password={password} />
         <Input
           label={t('register.confirmPassword')}

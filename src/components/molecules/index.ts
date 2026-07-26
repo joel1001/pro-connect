@@ -10,6 +10,7 @@ export { DeclineReasonModal } from './DeclineReasonModal';
 export { ImageUploadField, pickImage } from './ImageUploadField';
 export { IdentityDataCard } from './IdentityDataCard';
 export { PasswordRulesHint } from './PasswordRulesHint';
+export { PhoneNumberField } from './PhoneNumberField';
 export { OnboardingStepHeader } from './OnboardingStepHeader';
 export { SelectField } from './SelectField';
 export { ProgressBar } from './ProgressBar';
